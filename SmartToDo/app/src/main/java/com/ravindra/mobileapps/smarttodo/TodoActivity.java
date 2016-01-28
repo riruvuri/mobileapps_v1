@@ -46,6 +46,7 @@ public class TodoActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +55,7 @@ public class TodoActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
+        */
         //SQLiteDatabase db = openOrCreateDatabase("test.db", Context.MODE_PRIVATE, null);
         //TodoDatabaseHelper todoHelper = TodoDatabaseHelper.getInstance(getBaseContext());
         //todoHelper.onCreate(db);

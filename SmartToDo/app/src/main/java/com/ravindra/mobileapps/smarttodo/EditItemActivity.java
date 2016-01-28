@@ -24,6 +24,7 @@ public class EditItemActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +33,7 @@ public class EditItemActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        */
 
         String todoitem = getIntent().getStringExtra("todoitem");
         position = getIntent().getIntExtra("position", 0);
