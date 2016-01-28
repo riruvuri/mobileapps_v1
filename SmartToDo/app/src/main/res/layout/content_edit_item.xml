@@ -72,6 +72,34 @@
         android:id="@+id/etToDoItem"
         android:layout_below="@+id/tvEditTodoLabel" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Priority"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvPriorityLabel" />
+
+    <Spinner
+        android:id="@+id/sPriority"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvCategoryLabel" />
+
+    <Spinner
+        android:id="@+id/sCategory"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:text="@string/sample.todo.savebutton"
         android:id="@+id/button"

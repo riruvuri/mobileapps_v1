@@ -40,6 +40,7 @@ public class TodoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
 
@@ -56,9 +57,12 @@ public class TodoActivity extends AppCompatActivity {
             }
         });
         */
-        //SQLiteDatabase db = openOrCreateDatabase("test.db", Context.MODE_PRIVATE, null);
-        //TodoDatabaseHelper todoHelper = TodoDatabaseHelper.getInstance(getBaseContext());
-        //todoHelper.onCreate(db);
+
+        /*
+        SQLiteDatabase db = openOrCreateDatabase("test.db", Context.MODE_PRIVATE, null);
+        TodoDatabaseHelper todoHelper = TodoDatabaseHelper.getInstance(getBaseContext());
+        todoHelper.onCreate(db);
+        */
 
         //Load the existing items from the file
         readItems();
@@ -109,6 +113,8 @@ public class TodoActivity extends AppCompatActivity {
 
             TodoItem item = new TodoItem();
             item.text = itemText;
+            item.category = "Work";
+            item.priority = "High";
 
             itemsAdapter.add(item);
 
@@ -177,6 +183,8 @@ public class TodoActivity extends AppCompatActivity {
         Bundle args = new Bundle();
         args.putString("todoitem", item.text);
         args.putInt("position", position);
+        args.putString("category", item.category);
+        args.putString("priority",item.priority);
         args.putLong("id", item.id);
 
         editNameDialog.setArguments(args);

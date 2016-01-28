@@ -6,4 +6,6 @@ package com.ravindra.mobileapps.model;
 public class TodoItem {
     public long id;
     public String text;
+    public String priority;
+    public String category;
 }

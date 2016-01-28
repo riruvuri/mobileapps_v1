@@ -33,6 +33,7 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_TODO_ID = "id";
     private static final String KEY_TODO_USER_ID_FK = "userId";
     private static final String KEY_TODO_TEXT = "text";
+    private static final String KEY_TODO_CATEGORY = "category";
     private static final String KEY_TODO_COMP_DATE = "complete_by_date";
     private static final String KEY_TODO_PRIORITY = "priority";
 
@@ -75,8 +76,10 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
                 "(" +
                 KEY_TODO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + // Define a primary key
                  KEY_TODO_USER_ID_FK + " INTEGER REFERENCES " + TABLE_USERS + "," + // Define a foreign key
-                KEY_TODO_TEXT + " TEXT" +
-                KEY_TODO_COMP_DATE + " DATE" +
+                KEY_TODO_TEXT + " TEXT," +
+                KEY_TODO_CATEGORY + " TEXT," +
+                KEY_TODO_PRIORITY + " TEXT," +
+                KEY_TODO_COMP_DATE + " DATE," +
                 KEY_TODO_PRIORITY + " INTEGER" +
                 ")";
 
@@ -119,6 +122,8 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
             //values.put(KEY_POST_USER_ID_FK, userId);
             values.put(KEY_TODO_TEXT, todoItem.text);
+            values.put(KEY_TODO_CATEGORY, todoItem.category);
+            values.put(KEY_TODO_PRIORITY, todoItem.priority);
 
             // Notice how we haven't specified the primary key. SQLite auto increments the primary key column.
             long id = db.insertOrThrow(TABLE_TODO, null, values);
@@ -147,6 +152,8 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
             //values.put(KEY_POST_USER_ID_FK, userId);
             values.put(KEY_TODO_TEXT, todoItem.text);
+            values.put(KEY_TODO_CATEGORY, todoItem.category);
+            values.put(KEY_TODO_PRIORITY, todoItem.priority);
 
             // Notice how we haven't specified the primary key. SQLite auto increments the primary key column.
             int rows = db.update(TABLE_TODO, values, KEY_TODO_ID +"= ?", new String[]{String.valueOf(todoItem.id)});
